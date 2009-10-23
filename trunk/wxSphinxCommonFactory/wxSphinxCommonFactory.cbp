@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxSphinxCommonFactory" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="debug">
+				<Option output="../debug/wxSphinxCommonFactory" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/debug" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="-d 12" />
+				<Option host_application="wxSphinxLocalIndexer" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=yes --cflags`" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-DwxUSE_GUI=0" />
+					<Add directory="../include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="../include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=yes --cflags`" />
+					<Add library="/usr/lib/wxsqlite3.so" />
+				</Linker>
+			</Target>
+			<Target title="release">
+				<Option output="../release/wxSphinxCommonFactory" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=no --cflags`" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-DwxUSE_GUI=0" />
+					<Add directory="../include" />
+				</Compiler>
+				<Linker>
+					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=no --cflags`" />
+					<Add library="/usr/lib/wxsqlite3.so" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="wxFolderFactory.cpp" />
+		<Unit filename="wxFolderFactory.h" />
+		<Unit filename="wxHTMLFileFactory.cpp" />
+		<Unit filename="wxHTMLFileFactory.h" />
+		<Unit filename="wxMLFileFactory.cpp" />
+		<Unit filename="wxMLFileFactory.h" />
+		<Unit filename="wxTxtFileFactory.cpp" />
+		<Unit filename="wxTxtFileFactory.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+			</AutoVersioning>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
