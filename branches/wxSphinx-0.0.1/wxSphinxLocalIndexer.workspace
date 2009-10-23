@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="wxSphinxLocalIndexer workspace">
+		<Project filename="wxSphinxLocalIndexer/wxSphinxLocalIndexer.cbp">
+			<Depends filename="wxSphinxCommon/wxSphinxCommon.cbp" />
+		</Project>
+		<Project filename="wxSphinxCommonFactory/wxSphinxCommonFactory.cbp" active="1">
+			<Depends filename="wxSphinxCommon/wxSphinxCommon.cbp" />
+		</Project>
+		<Project filename="wxSphinxCommon/wxSphinxCommon.cbp" />
+		<Project filename="../wxsqlite3/wxsqlite3.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
