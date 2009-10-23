@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxSphinxLocalIndexer", "wxSphinxLocalIndexer\wxSphinxLocalIndexer.vcproj", "{88A7967A-F170-40B5-A4F1-4B1BFCA20720}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E} = {D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxSphinxCommonFactory", "wxSphinxCommonFactory\wxSphinxCommonFactory.vcproj", "{714F4A5C-DA5E-45A2-812A-30FB942B13D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720} = {88A7967A-F170-40B5-A4F1-4B1BFCA20720}
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E} = {D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxSphinxCommon", "wxSphinxCommon\wxSphinxCommon.vcproj", "{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DLL Unicode Debug|Win32 = DLL Unicode Debug|Win32
+		DLL Unicode Release|Win32 = DLL Unicode Release|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.Debug|Win32.ActiveCfg = Debug|Win32
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.Debug|Win32.Build.0 = Debug|Win32
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.DLL Unicode Debug|Win32.ActiveCfg = DLL Unicode Debug|Win32
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.DLL Unicode Debug|Win32.Build.0 = DLL Unicode Debug|Win32
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.DLL Unicode Release|Win32.ActiveCfg = DLL Unicode Release|Win32
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.DLL Unicode Release|Win32.Build.0 = DLL Unicode Release|Win32
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.Release|Win32.ActiveCfg = Release|Win32
+		{88A7967A-F170-40B5-A4F1-4B1BFCA20720}.Release|Win32.Build.0 = Release|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.Debug|Win32.Build.0 = Debug|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.DLL Unicode Debug|Win32.ActiveCfg = DLL Unicode Debug|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.DLL Unicode Debug|Win32.Build.0 = DLL Unicode Debug|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.DLL Unicode Release|Win32.ActiveCfg = Release|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.DLL Unicode Release|Win32.Build.0 = Release|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.Release|Win32.ActiveCfg = Release|Win32
+		{714F4A5C-DA5E-45A2-812A-30FB942B13D2}.Release|Win32.Build.0 = Release|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.Debug|Win32.Build.0 = Debug|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.DLL Unicode Debug|Win32.ActiveCfg = DLL Unicode Debug|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.DLL Unicode Debug|Win32.Build.0 = DLL Unicode Debug|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.DLL Unicode Release|Win32.ActiveCfg = Release|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.DLL Unicode Release|Win32.Build.0 = Release|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.Release|Win32.ActiveCfg = Release|Win32
+		{D88A3DC9-F6F6-4DFB-BD76-A91FF960B29E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
