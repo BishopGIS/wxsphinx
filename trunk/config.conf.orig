@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wxSphinxIndexer version="1.0">
+  <db path="/home/bishop/projects/wxSphinxLocalIndexer/release"/>
+  <log path="/home/bishop/projects/wxSphinxLocalIndexer/release"/>
+  <loc locale="ru"/>
+  <updater>
+    <item path="/home/bishop/projects/testdata" recursive="t"/>
+  </updater>
+  <lib>
+     <item path="/home/bishop/projects/wxSphinxLocalIndexer/release/wxSphinxCommonFactory.so"/>
+  </lib>
+  <factories>
+    <factory factory_name="wxFolderFactory" is_enabled="1"/>
+    <factory factory_name="wxTxtFileFactory" is_enabled="1" exts="txt,imb,rpb,til,log,ini,conf,cfg,csv"/>
+    <factory factory_name="wxMLFileFactory" is_enabled="1" exts="xml,eml,kml,svg,gml"/>
+    <factory factory_name="wxHTMLFileFactory" is_enabled="1" exts="html,htm" encodings="Windows-1251, KOI8-R, UTF-8, ISO-8859-5, CP866, Windows-1252, ISO-8859-1, ISO-8859-2, UTF-16, UTF-32, KOI8-U" />
+  </factories>
+  <indexer maxtext="1600" />
+</wxSphinxIndexer>
