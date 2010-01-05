@@ -181,7 +181,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(WXSQLLITE3)\include&quot;;&quot;$(WXWIDGETS)\include&quot;;&quot;$(WXWIDGETS)\contrib\include&quot;;&quot;$(WXWIDGETS)\lib\vc_dll\mswud&quot;;..\include"
+				AdditionalIncludeDirectories="&quot;$(WXWIDGETS)\src\zlib&quot;;&quot;$(WXSQLLITE3)\include&quot;;&quot;$(WXWIDGETS)\include&quot;;&quot;$(WXWIDGETS)\contrib\include&quot;;&quot;$(WXWIDGETS)\lib\vc_dll\mswud&quot;;..\include;D:\work\Projects\wxSphinxLocalIndexer\wxSphinxCommonFactory"
 				PreprocessorDefinitions="WIN32;_DEBUG;__WXMSW__;__WXDEBUG__;WXUSINGDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -253,6 +253,22 @@
 				>
 			</File>
 			<File
+				RelativePath=".\wxPDFDocument.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\wxPDFFileFactory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\wxPDFStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\wxPDFXref.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\wxTxtFileFactory.cpp"
 				>
 			</File>
@@ -263,6 +279,10 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\config.h"
+				>
+			</File>
+			<File
 				RelativePath=".\wxFolderFactory.h"
 				>
 			</File>
@@ -272,6 +292,22 @@
 			</File>
 			<File
 				RelativePath=".\wxMLFileFactory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\wxPDFDocument.h"
+				>
+			</File>
+			<File
+				RelativePath=".\wxPDFFileFactory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\wxPDFStream.h"
+				>
+			</File>
+			<File
+				RelativePath=".\wxPDFXref.h"
 				>
 			</File>
 			<File

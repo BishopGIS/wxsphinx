@@ -34,7 +34,6 @@
 					<Add option="-pg" />
 					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=yes --libs`" />
 					<Add library="../debug/wxSphinxCommon.so" />
-					<Add library="/usr/lib/wxsqlite3.so" />
 					<Add directory="../debug" />
 				</Linker>
 			</Target>
@@ -62,11 +61,16 @@
 				<Linker>
 					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=no --libs`" />
 					<Add library="/usr/lib/wxSphinxCommon.so" />
-					<Add library="/usr/lib/wxsqlite3.so" />
 					<Add directory="../release" />
 				</Linker>
 			</Target>
 		</Build>
+		<Compiler>
+			<Add directory="/home/bishop/projects/wxsqlite3/include" />
+		</Compiler>
+		<Linker>
+			<Add library="/usr/lib/wxsqlite3.so" />
+		</Linker>
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Unit filename="wxSphinxFactories.cpp" />

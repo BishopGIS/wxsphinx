@@ -194,7 +194,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(WXSQLLITE3)\include&quot;;&quot;$(WXWIDGETS)\include&quot;;&quot;$(WXWIDGETS)\contrib\include&quot;;&quot;$(WXWIDGETS)\lib\vc_dll\mswud&quot;;..\include"
+				AdditionalIncludeDirectories="&quot;$(WXWIDGETS)\src\zlib&quot;;&quot;$(WXSQLLITE3)\include&quot;;&quot;$(WXWIDGETS)\include&quot;;&quot;$(WXWIDGETS)\contrib\include&quot;;&quot;$(WXWIDGETS)\lib\vc_dll\mswud&quot;;..\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;__WXMSW__;__WXDEBUG__;WXUSINGDLL;_CONSOLE;wxUSE_GUI=0"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -367,7 +367,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\wxsphinxfactories.h"
+				RelativePath=".\wxSphinxFactories.h"
 				>
 			</File>
 			<File

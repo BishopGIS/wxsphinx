@@ -1,6 +1,6 @@
 /******************************************************************************
  * Project:  Sphinx Search local file system index utility
- * Purpose:  wxSphinxIndexer class.
+ * Purpose:  wxPdfDocument class. for read purposes only
  * Author:   Bishop (aka Barishnikov Dmitriy), polimax@mail.ru
  ******************************************************************************
 *   Copyright (C) 2009  Bishop
@@ -20,20 +20,26 @@
  ****************************************************************************/
 #pragma once
 
-#include "common.h"
-#include "../wxSphinxCommon/wxContainer.h"
-#include "wxSphinxFactories.h"
+#include "wxpdfxref.h"
 
-class wxSphinxIndexer
+/////////////////////////////////////////////////////////////////////////////
+// wxPdfDocument
+/////////////////////////////////////////////////////////////////////////////
+
+class wxPdfDocument :
+	public wxObject
 {
 public:
-	wxSphinxIndexer(bool bQuiet, wxXmlNode *pConf, wxSQLite3Database *pdb, wxSphinxFactories* pFactories);
-	~wxSphinxIndexer(void);
-	virtual bool Start(long nMaxCount);
-	virtual bool ShowDetails(long nIndex);
-private:
-	bool m_bQuiet;
-	wxSQLite3Database *m_pDB;
-	wxXmlNode *m_pConf;
-    wxSphinxFactories* m_pFactories;
+	wxPdfDocument(void);
+	wxPdfDocument(const wxString& filename, const wxString& ownerpassword = wxEmptyString, const wxString& userpassword = wxEmptyString);
+	virtual ~wxPdfDocument(void);
+	bool IsOk() const;
+	bool Load(const wxString& filename, const wxString& ownerpassword, const wxString& userpassword);
+	wxString GetText(void);
+	wxString ParseText(wxString sText);
+protected:
+	bool m_bIsOk;
+	wxFFileInputStream* m_pFFileInputStream;
+	wxPdfXRef* m_pXRef;
+	wxString m_sFileName;
 };
