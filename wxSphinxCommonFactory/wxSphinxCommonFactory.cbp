@@ -25,14 +25,17 @@
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-D_CONSOLE" />
 					<Add option="-DwxUSE_GUI=0" />
+					<Add option="-DX_DISPLAY_MISSING=1" />
+					<Add option="-DPOPPLER_WITH_GDK=0" />
+					<Add option="-DHAVE_CAIRO=0" />
 					<Add directory="../include" />
+					<Add directory="/usr/include/poppler" />
 				</Compiler>
 				<ResourceCompiler>
 					<Add directory="../include" />
 				</ResourceCompiler>
 				<Linker>
 					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=yes --cflags`" />
-					<Add library="/usr/lib/wxsqlite3.so" />
 				</Linker>
 			</Target>
 			<Target title="release">
@@ -53,19 +56,28 @@
 					<Add option="-D_CONSOLE" />
 					<Add option="-DwxUSE_GUI=0" />
 					<Add directory="../include" />
+					<Add directory="/usr/include/poppler" />
 				</Compiler>
 				<Linker>
 					<Add option="`wx-config-base  --version=2.8 --static=no --unicode=yes --debug=no --cflags`" />
-					<Add library="/usr/lib/wxsqlite3.so" />
 				</Linker>
 			</Target>
 		</Build>
+		<Compiler>
+			<Add directory="/home/bishop/projects/wxsqlite3/include" />
+		</Compiler>
+		<Linker>
+			<Add library="/usr/lib/wxsqlite3.so" />
+			<Add library="/usr/lib/libpoppler.so" />
+		</Linker>
 		<Unit filename="wxFolderFactory.cpp" />
 		<Unit filename="wxFolderFactory.h" />
 		<Unit filename="wxHTMLFileFactory.cpp" />
 		<Unit filename="wxHTMLFileFactory.h" />
 		<Unit filename="wxMLFileFactory.cpp" />
 		<Unit filename="wxMLFileFactory.h" />
+		<Unit filename="wxPDFFileFactory.cpp" />
+		<Unit filename="wxPDFFileFactory.h" />
 		<Unit filename="wxTxtFileFactory.cpp" />
 		<Unit filename="wxTxtFileFactory.h" />
 		<Extensions>

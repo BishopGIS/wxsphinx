@@ -1,23 +1,3 @@
-/******************************************************************************
- * Project:  Sphinx Search local file system index utility
- * Purpose:  wxSphinxIndexer class.
- * Author:   Bishop (aka Barishnikov Dmitriy), polimax@mail.ru
- ******************************************************************************
-*   Copyright (C) 2009  Bishop
-*
-*    This program is free software: you can redistribute it and/or modify
-*    it under the terms of the GNU General Public License as published by
-*    the Free Software Foundation, either version 3 of the License, or
-*    (at your option) any later version.
-*
-*    This program is distributed in the hope that it will be useful,
-*    but WITHOUT ANY WARRANTY; without even the implied warranty of
-*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*    GNU General Public License for more details.
-*
-*    You should have received a copy of the GNU General Public License
-*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- ****************************************************************************/
 #include "wxSphinxIndexer.h"
 #include <map>
 #include "wx/strconv.h"
@@ -147,7 +127,8 @@ bool wxSphinxIndexer::Start(long nMaxCount)
 bool wxSphinxIndexer::ShowDetails(long nIndex)
 {
 	//1. connect DB
-	wxSQLite3ResultSet set = m_pDB->ExecuteQuery(wxString::Format(wxT("SELECT path, module, datatext FROM %s WHERE oid = %u"), TABLE_NAME, nIndex));
+	wxString sQuere = wxString::Format(wxT("SELECT path, module, datatext FROM %s WHERE oid = %u"), TABLE_NAME, nIndex);
+	wxSQLite3ResultSet set = m_pDB->ExecuteQuery(sQuere);
 	//2. run throw DB recordset
 	if(set.NextRow())
 	{
@@ -192,6 +173,7 @@ bool wxSphinxIndexer::ShowDetails(long nIndex)
         if(datatext.Len() > nMaxSize)
             datatext = datatext.Left(nMaxSize);
 
+        datatext.Replace(wxT("\n"), wxT(" "));
 		wxFprintf(stdout, wxT("%s\n%s\n%s\n%s\n"), path.c_str(), sTitle.c_str(), times.c_str(), datatext.c_str());
 	}
 

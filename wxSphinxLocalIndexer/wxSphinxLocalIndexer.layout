@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="release" />
-	<File name="main.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="7420" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="6836" topLine="174" />
 	</File>
 	<File name="main.h" open="0" top="0" tabpos="1">
 		<Cursor position="1796" topLine="20" />
 	</File>
-	<File name="wxSphinxIndexer.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="1831" topLine="22" />
+	<File name="wxSphinxIndexer.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="4601" topLine="118" />
 	</File>
-	<File name="wxSphinxIndexer.h" open="1" top="0" tabpos="6">
+	<File name="wxSphinxIndexer.h" open="0" top="0" tabpos="2">
 		<Cursor position="1473" topLine="0" />
 	</File>
-	<File name="wxSphinxUpdater.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="1181" topLine="38" />
+	<File name="wxSphinxUpdater.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="2469" topLine="59" />
 	</File>
-	<File name="wxSphinxUpdater.h" open="0" top="0" tabpos="1">
-		<Cursor position="1550" topLine="0" />
+	<File name="wxSphinxUpdater.h" open="1" top="0" tabpos="5">
+		<Cursor position="1613" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

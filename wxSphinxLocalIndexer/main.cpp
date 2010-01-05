@@ -1,24 +1,3 @@
-/******************************************************************************
- * Project:  Sphinx Search local file system index utility
- * Purpose:  Main class.
- * Author:   Bishop (aka Barishnikov Dmitriy), polimax@mail.ru
- ******************************************************************************
-*   Copyright (C) 2009  Bishop
-*
-*    This program is free software: you can redistribute it and/or modify
-*    it under the terms of the GNU General Public License as published by
-*    the Free Software Foundation, either version 3 of the License, or
-*    (at your option) any later version.
-*
-*    This program is distributed in the hope that it will be useful,
-*    but WITHOUT ANY WARRANTY; without even the implied warranty of
-*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*    GNU General Public License for more details.
-*
-*    You should have received a copy of the GNU General Public License
-*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- ****************************************************************************/
-
 #include "main.h"
 #include "wxSphinxIndexer.h"
 #include "wxSphinxUpdater.h"
@@ -27,7 +6,7 @@
 //IMPLEMENT_APP_CONSOLE(App);
 #define MAJOR 0
 #define MINOR 0
-#define BUILD 1
+#define BUILD 2
 
 //---------------------------------------------
 // wxSphinxPluginManager
@@ -85,7 +64,7 @@ int main(int argc, char **argv)
 	bool success( false );
 
     // Parse command line arguments
-    //success = parse_commandline_parameters( argc, argv );
+    success = parse_commandline_parameters( argc, argv );
 
     return success;
 }
@@ -107,7 +86,6 @@ bool parse_commandline_parameters( int argc, char** argv )
         { wxCMD_LINE_OPTION, wxT( "d" ), wxT("detail"), _("show node details"), wxCMD_LINE_VAL_NUMBER },
 		{ wxCMD_LINE_NONE }
     };
-
     wxCmdLineParser my_parser( my_cmdline_desc, argc, argv );
     my_parser.SetLogo(wxString::Format(_("The Sphinx Search local indexer (%u.%u.%u)\nAuthor: Bishop (aka Barishnikov Dmitriy), polimax@mail.ru\nCopyright (c) 2009"), MAJOR, MINOR, BUILD));
 
@@ -237,7 +215,7 @@ bool parse_commandline_parameters( int argc, char** argv )
 
 	//4 open/create DB
 	wxSQLite3Database db;
-	db.Open(sDBPath + wxFileName::GetPathSeparator() + INDEXDB);
+	db.Open(sDBPath + wxFileName::GetPathSeparator() + INDEXDB, wxEmptyString);
 	if(!db.IsOpen())
 	{
         wxLogError(_("Filed to open DB"));

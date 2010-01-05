@@ -60,6 +60,9 @@
 				</Linker>
 			</Target>
 		</Build>
+		<Compiler>
+			<Add directory="/home/bishop/projects/wxsqlite3/include" />
+		</Compiler>
 		<Unit filename="wxContainer.cpp" />
 		<Unit filename="wxContainer.h" />
 		<Extensions>
