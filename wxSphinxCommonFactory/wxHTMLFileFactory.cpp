@@ -346,9 +346,9 @@ wxString wxHTMLFileFactory::AnalyseHTML(wxString sInStr)
                 continue;
 //            if(sTagName[0] == '/')
 //                continue;
-            if(sOutstr[sOutstr.Len() - 1] == ' ' && sSymbol == ' ')
+			if(!sOutstr.IsEmpty() && sOutstr[sOutstr.Len() - 1] == ' ' && sSymbol == ' ')
                 continue;
-            if(sOutstr[sOutstr.Len() - 1] == '\n' && sSymbol == '\n')
+            if(!sOutstr.IsEmpty() && sOutstr[sOutstr.Len() - 1] == '\n' && sSymbol == '\n')
                 continue;
             if(sSymbol == '\t' || sSymbol == '\"' || sSymbol == '\'')
                 sSymbol = ' ';

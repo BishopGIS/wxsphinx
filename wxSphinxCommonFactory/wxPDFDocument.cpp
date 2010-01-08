@@ -22,6 +22,7 @@
 #include "wxPDFStream.h"
 #include <wx/txtstrm.h>
 #include <wx/tokenzr.h>
+#include <wx/strconv.h>
 
 /////////////////////////////////////////////////////////////////////////////
 // wxPdfDocument
@@ -326,14 +327,47 @@ wxString wxPdfDocument::GetText(void)
 		}
 		else 
 		{
-			unsigned char* pBuff = new unsigned char[nLength];
-			m_pFFileInputStream->Read(pBuff, nLength);
-			sTempStr = wxString((char*)pBuff, *wxConvCurrent, nLength);
-			wxDELETEA(pBuff);
+			wxMemoryBuffer MemBuf;
+			if(nLength == -2)
+			{
+				unsigned char Buff[10000];
+				bool bStop(false);
+				while(!bStop)
+				{
+					m_pFFileInputStream->Read(Buff, 4096);
+					for(size_t i = 0; i < m_pFFileInputStream->LastRead(); i++)
+					{
+						if(Buff[i] == 'e')
+						{//endstream
+							if(i < m_pFFileInputStream->LastRead() - 4)
+							{
+								wxString sStr((char*)(Buff + i), *wxConvCurrent, 4);
+								if(sStr.CmpNoCase(wxT("ends")) == 0)
+								{
+									bStop = true;
+									break;
+								}
+							}
+						}
+						MemBuf.AppendByte(Buff[i]);
+					}
+				}
+				nLength = MemBuf.GetDataLen();
+			}
+			else
+			{
+				unsigned char* pBuff = new unsigned char[nLength];
+				m_pFFileInputStream->Read(pBuff, nLength);
+				MemBuf.AppendData(pBuff, nLength);
+				wxDELETEA(pBuff);
+			}
+			sTempStr = wxString((char*)MemBuf.GetData(), *wxConvCurrent, nLength);
 		}
-		//wxLogDebug(sTempStr);
-		if(sTempStr.Find(wxT("BT")) == wxNOT_FOUND)
+//		wxLogDebug(sTempStr);
+		int nPos = 0;
+		if((nPos = sTempStr.Find(wxT("BT"))) == wxNOT_FOUND)
 			continue;
+		//wxLogDebug(sTempStr.Mid(nPos, 100));
 		sResulText.Append(ParseText(sTempStr));
 		sResulText += wxT(" ");
 	}
@@ -342,6 +376,7 @@ wxString wxPdfDocument::GetText(void)
 
 wxString wxPdfDocument::ParseText(wxString sText)
 {
+	wxLogDebug(sText);
 	wxString sResulText;
 	int nOpenCount(0);
 	for(size_t i = 0; i < sText.Len(); i++)
@@ -391,7 +426,11 @@ wxString wxPdfDocument::ParseText(wxString sText)
 			continue;
 		}
 		if(nOpenCount > 0)
+		{
+			if(sResulText.Len() > 1 && sResulText[sResulText.Len() - 1] == ' ' && sText[i] == ' ')
+				continue;
 			sResulText += sText[i];
+		}
 	}
 	return sResulText;
 }
