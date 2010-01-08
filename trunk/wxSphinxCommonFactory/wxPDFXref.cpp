@@ -231,8 +231,8 @@ bool wxPdfXRef::ReadXRefStream(wxUint32 nOff)
 	{
 		wxString sTemp = arr[i];
 		sTemp.Replace(wxT("<<"), wxT(""));
-		sTemp.Replace(wxT("["), wxT(""));
-		sTemp.Replace(wxT("]"), wxT(""));
+		//sTemp.Replace(wxT("["), wxT(""));
+		//sTemp.Replace(wxT("]"), wxT(""));
 		int nPos = sTemp.Find(wxT(">>"));
 		if(nPos != wxNOT_FOUND)
 			sTemp = sTemp.Left(nPos);
@@ -240,7 +240,8 @@ bool wxPdfXRef::ReadXRefStream(wxUint32 nOff)
 		if(sTemp.Find(wxT("W")) != wxNOT_FOUND)
 		{
 			int nPos = sTemp.Find(wxT("]"));
-			sTemp = sTemp.Left(nPos);
+			if(nPos != wxNOT_FOUND)
+				sTemp = sTemp.Left(nPos);
 			sTemp = sTemp.Remove(0, 2);
 			wxArrayString swarr = wxStringTokenize(sTemp, wxT(" "));
 			int nSize = swarr.size() > 3 ? 3 : swarr.size();
